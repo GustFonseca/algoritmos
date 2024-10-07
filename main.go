@@ -2,8 +2,8 @@ package main
 
 import (
 	"algoritmos/plot" 
-	// "algoritmos/quickSort"
-	"algoritmos/mergeSort" 
+	"algoritmos/quickSort"
+	// "algoritmos/mergeSort" 
 	"fmt"
 	"os"
 	"path/filepath"
@@ -45,8 +45,8 @@ func generateRandomArray() [25]int {
 
 
 func main() {
-	// name := "QuickSort"
-	name := "MergeSort"
+	name := "QuickSort"
+	// name := "MergeSort"
 
 	arr := generateRandomArray()
 	iteration := 0
@@ -54,8 +54,8 @@ func main() {
 	deleteFiles()
 	plot.PlotArray(arr[:], iteration, name, []int{})
 
-	// quickSort.QuickSort(arr[:], 0, len(arr)-1, &iteration)
-	mergeSort.MergeSort(arr[:], &iteration)
+	quickSort.QuickSort(arr[:], 0, len(arr)-1, &iteration)
+	// mergeSort.MergeSort(arr[:], &iteration)
 
 	fmt.Println("Ordenação final:", arr)
 }
