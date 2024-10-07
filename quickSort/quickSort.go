@@ -5,6 +5,7 @@ import (
 )
 
 func Partition(arr []int, low, high int, iteration *int) int {
+	name := "Quick Sort"
 	pivot := arr[high]
 	i := low - 1
 
@@ -13,12 +14,12 @@ func Partition(arr []int, low, high int, iteration *int) int {
 			i++
 			arr[i], arr[j] = arr[j], arr[i]
 			*iteration++
-			plot.PlotArray(arr, *iteration)
+			plot.PlotArray(arr, *iteration, name, []int{i, j}) // Chamada para plotar
 		}
 	}
 	arr[i+1], arr[high] = arr[high], arr[i+1]
 	*iteration++
-	plot.PlotArray(arr, *iteration)
+	plot.PlotArray(arr, *iteration, name, []int{i, high}) // Chamada para plotar o último estado
 	return i + 1
 }
 
