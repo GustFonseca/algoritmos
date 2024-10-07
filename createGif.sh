@@ -25,7 +25,7 @@ echo "Criando GIF com largura ajustada para $size pixels."
 last_image=$(ls graphics/iter_*.png | tail -n 1)
 
 # Cria o GIF com atraso regular para todas as imagens, exceto a última, que terá um delay de 5 segundos
-convert -resize ${size}x -delay 20 graphics/iter_*.png animation.gif
+convert -resize ${size}x -delay 50 graphics/iter_*.png animation.gif
 
 # Verifica se o GIF foi criado com sucesso
 if [ $? -eq 0 ]; then
