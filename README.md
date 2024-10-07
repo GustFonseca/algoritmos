@@ -21,7 +21,7 @@ Este projeto tem como objetivo fornecer uma implementação clara de algoritmos 
 Para clonar e configurar o projeto localmente, siga os passos abaixo:
 
 # Clone o repositório
-git clone https://github.com/seu-usuario/algoritimos.git
+git clone https://github.com/GustFonseca/algoritmos.git
 
 # Entre no diretório do projeto
 cd algoritimos
