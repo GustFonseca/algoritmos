@@ -32,11 +32,11 @@ func deleteFiles() {
 	fmt.Println("Todos os arquivos foram apagados com sucesso.")
 }
 
-func generateRandomArray() [100]int {
-	var arr [100]int
+func generateRandomArray() [25]int {
+	var arr [25]int
 	rand.Seed(time.Now().UnixNano()) 
 
-	for i := 0; i < 100; i++ {
+	for i := 0; i < 25; i++ {
 		arr[i] = rand.Intn(1000) 
 	}
 
@@ -47,7 +47,6 @@ func generateRandomArray() [100]int {
 func main() {
 	name := "QuickSort"
 	// name := "MergeSort"
-
 	arr := generateRandomArray()
 	iteration := 0
 
@@ -56,6 +55,5 @@ func main() {
 
 	quickSort.QuickSort(arr[:], 0, len(arr)-1, &iteration)
 	// mergeSort.MergeSort(arr[:], &iteration)
-
 	fmt.Println("Ordenação final:", arr)
 }

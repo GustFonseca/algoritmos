@@ -13,7 +13,7 @@ Este projeto implementa algoritmos de ordenação, como **mergesort** e **quicks
 8. [Contato](#contato)
 
 ## Visão Geral
-Este projeto tem como objetivo fornecer uma implementação clara de algoritmos de ordenação conhecidos, permitindo que o usuário visualize suas etapas em um GIF gerado automaticamente após a execução. Atualmente, o projeto contém os seguintes algoritmos:
+Este projeto tem como objetivo fornecer uma implementação clara de todos os algoritmos clássicos, permitindo que o usuário visualize suas etapas em um GIF gerado automaticamente após a execução. Atualmente, o projeto contém os seguintes algoritmos:
 - **Mergesort**
 - **Quicksort**
 
