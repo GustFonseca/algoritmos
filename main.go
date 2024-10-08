@@ -12,14 +12,14 @@ import (
 )
 
 func deleteFiles() {
-	dir := "graphics" // Altere para o caminho do seu diretório
+	dir := "graphics" 
 
 	err := filepath.Walk(dir, func(path string, info os.FileInfo, err error) error {
 		if err != nil {
 			return err
 		}
-		if !info.IsDir() { // Verifica se não é um diretório
-			return os.Remove(path) // Remove o arquivo
+		if !info.IsDir() { 
+			return os.Remove(path) 
 		}
 		return nil
 	})
@@ -32,11 +32,11 @@ func deleteFiles() {
 	fmt.Println("Todos os arquivos foram apagados com sucesso.")
 }
 
-func generateRandomArray() [25]int {
-	var arr [25]int
+func generateRandomArray() [100]int {
+	var arr [100]int
 	rand.Seed(time.Now().UnixNano()) 
 
-	for i := 0; i < 25; i++ {
+	for i := 0; i < 100; i++ {
 		arr[i] = rand.Intn(1000) 
 	}
 
