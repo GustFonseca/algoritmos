@@ -30,6 +30,8 @@ func main() {
 		plot.PlotArray(arr[:], iteration, "Quicksort", []int{})
 		quickSort.QuickSort(arr[:], 0, len(arr)-1, &iteration)
 
+		services.RunShellScript("createGif.sh")
+
 	case 2:
 		fmt.Println("Mergesort!")
 		fmt.Println("\n")
@@ -37,6 +39,8 @@ func main() {
 		
 		plot.PlotArray(arr[:], iteration, "Mergesort", []int{})
 		mergeSort.MergeSort(arr[:], &iteration)
+
+		services.RunShellScript("createGif.sh")
 
 	case 0:
 		fmt.Println("Saindo do programa...")

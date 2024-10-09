@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"math/rand"
 	"os"
+	"os/exec"
 	"path/filepath"
 	"time"
 )
@@ -41,6 +42,16 @@ func DeleteFiles() {
 	}
 }
 
+func RunShellScript(scriptPath string) {
+	cmd := exec.Command("/bin/bash", scriptPath)
+
+	err := cmd.Run()
+	if err != nil {
+		fmt.Printf("Erro ao executar o script: %v\n", err)
+	} else {
+		fmt.Println("Script executado com sucesso.")
+	}
+}
 const (
 	Reset  = "\033[0m"    
 	Red    = "\033[31m" 
