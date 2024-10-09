@@ -1,59 +1,49 @@
 package main
 
 import (
+	"algoritmos/services"
 	"algoritmos/plot" 
 	"algoritmos/quickSort"
-	// "algoritmos/mergeSort" 
+	"algoritmos/mergeSort" 
 	"fmt"
 	"os"
-	"path/filepath"
-	"math/rand"
-	"time"
 )
 
-func deleteFiles() {
-	dir := "graphics" 
-
-	err := filepath.Walk(dir, func(path string, info os.FileInfo, err error) error {
-		if err != nil {
-			return err
-		}
-		if !info.IsDir() { 
-			return os.Remove(path) 
-		}
-		return nil
-	})
-
-	if err != nil {
-		fmt.Println("Erro ao apagar os arquivos:", err)
-		return
-	}
-
-	fmt.Println("Todos os arquivos foram apagados com sucesso.")
-}
-
-func generateRandomArray() [25]int {
-	var arr [25]int
-	rand.Seed(time.Now().UnixNano()) 
-
-	for i := 0; i < 25; i++ {
-		arr[i] = rand.Intn(1000) 
-	}
-
-	return arr
-}
-
-
 func main() {
-	name := "QuickSort"
-	// name := "MergeSort"
-	arr := generateRandomArray()
+	arr := services.GenerateRandomArray()
+	services.DeleteFiles()
+
+	services.ShowBanner()
+	services.ShowMenu()
+	
 	iteration := 0
 
-	deleteFiles()
-	plot.PlotArray(arr[:], iteration, name, []int{})
+	var choice int
+	fmt.Scan(&choice)
+	
+	switch choice {
+	case 1:
+		fmt.Println("Quicksort!")
+		fmt.Println("\n")
+		
+		
+		plot.PlotArray(arr[:], iteration, "Quicksort", []int{})
+		quickSort.QuickSort(arr[:], 0, len(arr)-1, &iteration)
 
-	quickSort.QuickSort(arr[:], 0, len(arr)-1, &iteration)
-	// mergeSort.MergeSort(arr[:], &iteration)
+	case 2:
+		fmt.Println("Mergesort!")
+		fmt.Println("\n")
+		
+		
+		plot.PlotArray(arr[:], iteration, "Mergesort", []int{})
+		mergeSort.MergeSort(arr[:], &iteration)
+
+	case 0:
+		fmt.Println("Saindo do programa...")
+		os.Exit(0)
+	default:
+		fmt.Println("Opção inválida. Tente novamente.")
+	}
+	
 	fmt.Println("Ordenação final:", arr)
 }
